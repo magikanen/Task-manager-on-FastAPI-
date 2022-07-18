@@ -14,4 +14,4 @@ ORM: SQLAlchemy
 }
 }
 2. GET /tasks - получает все существующие задачи
-3. PUT /tasks/<task_sid> - обновляет задачу по sid
+3. PUT /tasks/<task_uuid> - обновляет задачу по uuid
