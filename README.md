@@ -1,7 +1,7 @@
 # Task-manager-on-FastAPI-
 База данных: PostgreSQL
 ORM: SQLAlchemy
-Валидаторы данных (схемы) - Pydantic
+Валидаторы данных (схемы): Pydantic
 
 Функциональность:
 1. POST /tasks/add добавляет задачу в базу данных
