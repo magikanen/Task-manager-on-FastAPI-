@@ -13,6 +13,5 @@ DATABASE = {
 }
 
 engine = create_engine(URL(**DATABASE))
-#engine = create_engine('postgresql://mgknn:tst@localhost:5432/postgres')
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 Base = declarative_base()
