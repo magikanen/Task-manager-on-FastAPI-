@@ -1,0 +1,10 @@
+version: "4"
+services:
+  database:
+    image: postgres:13.3
+    environment:
+      POSTGRES_DB: "postgres"
+      POSTGRES_USER: "mgknn"
+      POSTGRES_PASSWORD: "tst"
+    ports:
+      - "5432:5432"
