@@ -1,4 +1,4 @@
-# Task-manager-on-FastAPI-
+# Task manager on FastAPI 
 База данных: PostgreSQL
 ORM: SQLAlchemy
 Валидаторы данных (схемы): Pydantic
