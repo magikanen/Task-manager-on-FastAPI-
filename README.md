@@ -1,4 +1,5 @@
-# Task manager on FastAPI 
+____
+# Task
 База данных: PostgreSQL
 ORM: SQLAlchemy
 Валидаторы данных (схемы): Pydantic
@@ -15,3 +16,7 @@ ORM: SQLAlchemy
 }
 2. GET /tasks - получает все существующие задачи
 3. PUT /tasks/<task_uuid> - обновляет задачу по uuid
+
+____
+# Build
+docker-compose up --build --remove-orphans 
