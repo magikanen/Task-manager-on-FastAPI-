@@ -1,19 +1,19 @@
 from fastapi import FastAPI, Depends, HTTPException, status
 from uuid import UUID
-
-import model
-from database import engine, create_session
-from schema import TaskSchema, TaskSchemaExpanded
-from sqlalchemy.orm import Session
-from model import Task
 from typing import List
+from sqlalchemy.orm import Session
+
+import app.models as models
+from app.database import engine, create_session
+from app.schema import TaskSchema, TaskSchemaExpanded
+from app.models import Task
 
 app = FastAPI()
 
 @app.on_event("startup")
 async def startup():
-    model.Base.metadata.drop_all(bind=engine) #await
-    model.Base.metadata.create_all(bind=engine)
+    models.Base.metadata.drop_all(bind=engine) #await
+    models.Base.metadata.create_all(bind=engine)
 
 @app.get("/tasks", response_model=List[TaskSchemaExpanded], status_code=200)
 async def read_tasks(db: Session = Depends(create_session)):
@@ -38,3 +38,4 @@ async def update_task(task_uuid: UUID, task: TaskSchema, db: Session = Depends(c
    else:
       raise HTTPException(status.HTTP_404_NOT_FOUND, detail="Task with UUID does not exist ")
    return updating_task
+
