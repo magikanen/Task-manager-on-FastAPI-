@@ -1,11 +1,11 @@
 ____
 # Task
-База данных: PostgreSQL
-ORM: SQLAlchemy
-Валидаторы данных (схемы): Pydantic
+База данных: PostgreSQL  
+ORM: SQLAlchemy  
+Валидаторы данных (схемы): Pydantic  
 
 Функциональность:
-1. POST /tasks/add добавляет задачу в базу данных
+1. POST /tasks/add добавляет задачу в базу данных   
 {
 "task_uuid": "UUID",
 "description": "тестовая задача",
