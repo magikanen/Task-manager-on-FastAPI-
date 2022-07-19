@@ -1,17 +1,17 @@
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Extra
 from uuid import uuid4, UUID
 
-class task_params_model(BaseModel):
-    task_param_1 : str
-    task_param_2 : int
+class TaskParamsModel(BaseModel, extra=Extra.forbid):
+    task_param_1: str
+    task_param_2: int
 
-class task_schema(BaseModel):
-   task_description : str
-   task_params : task_params_model
+class TaskSchema(BaseModel):
+   task_description: str
+   task_params: TaskParamsModel
    class Config:
        orm_mode = True
 
-class task_schema_expanded(task_schema):
+class TaskSchemaExpanded(TaskSchema):
    task_uuid: UUID = uuid4()
    class Config:
        orm_mode = True
